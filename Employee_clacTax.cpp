@@ -9,13 +9,13 @@ class Employee {
     float taxableIncome, tax;
 
    public:
-    void InputInfo() {
-        cout << "Enter the employee's name: ";
-        std::getline(cin, name);
-        cout << "Enter the employee's personal account number: ";
-        std::getline(cin, pan);
-        cout << "Enter the employee's taxable income: ";
+    void InputInfo(int i) {
+        cout << "Enter the employee" << i << " taxable income: ";
         cin >> taxableIncome;
+        cout << "Enter the employee" << i << " name: ";
+        std::getline(cin.ignore(), name);
+        cout << "Enter the employee" << i << " personal account number: ";
+        std::getline(cin, pan);
     }
     void TaxCalc() {
         if (taxableIncome < 250000)
@@ -28,17 +28,20 @@ class Employee {
             tax = 25000 + 0.3 * (taxableIncome - 400000);
     }
 
-    void display() {
-        cout << "The employee's name is " << name << std::endl;
-        cout << "The employee's PAN is " << pan << std::endl;
-        cout << "The employee's income is " << taxableIncome << std::endl;
-        cout << "The employee's tax is " << tax << std::endl;
+    void display(int i) {
+        cout << "The employee " << i << " name is " << name << std::endl;
+        cout << "The employee " << i << " PAN is " << pan << std::endl;
+        cout << "The employee " << i << " income is " << taxableIncome << std::endl;
+        cout << "The employee " << i << " tax is " << tax << std::endl;
     }
 };
 
 int main() {
-    Employee emp;
-    emp.InputInfo();
-    emp.TaxCalc();
-    emp.display();
+    Employee emp[3];
+    for (int i = 0; i < 3; i++)
+        emp[i].InputInfo(i);
+    for (int i = 0; i < 3; i++) {
+        emp[i].TaxCalc();
+        emp[i].display(i);
+    }
 }
