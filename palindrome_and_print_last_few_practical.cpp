@@ -15,16 +15,18 @@ class StringFunc {
     }
 
     void string_function(std::string str) {
-        int i = str.length() - 1;
-        std::string rev_word = "";
-        while (i >= 0) {
-            rev_word += str[i];
-            i--;
+        int i, j;
+        int flag = 0;
+        for (i = 0, j = str.length() - 1; i < str.length(), j >= 0; i++, j--) {
+            if (i != j) {
+                flag = 1;
+                break;
+            }
         }
-        if (rev_word == str)
-            cout << "String is palindrome.\n";
-        else
+        if (flag == 1)
             cout << "String is not palindrome.\n";
+        else
+            cout << "String is palindrome.\n";
     }
 };
 
