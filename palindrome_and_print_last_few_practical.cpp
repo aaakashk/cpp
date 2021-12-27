@@ -17,8 +17,9 @@ class StringFunc {
     void string_function(std::string str) {
         int i, j;
         int flag = 0;
-        for (i = 0, j = str.length() - 1; i < str.length(), j >= 0; i++, j--) {
-            if (i != j) {
+        int len = str.length();
+        for (i = 0; i <= len / 2; i++) {
+            if (str[i] != str[len - 1 - i]) {
                 flag = 1;
                 break;
             }
