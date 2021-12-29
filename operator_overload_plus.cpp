@@ -29,8 +29,7 @@ void operator++(FriendOperatorOverloading &p) {
 }
 
 int operator++(FriendOperatorOverloading p, int) {
-    p.c++;
-    return p.c;
+    return p.c++;
 }
 
 void operator+(FriendOperatorOverloading &p, FriendOperatorOverloading &q) {
