@@ -1,0 +1,14 @@
+constructor initialization for class Square:
+
+class Shape{
+    public:
+    int length, breadth, height, slant_height, radius;
+
+};
+
+class Square: public Shape{
+    public:
+    Square(int length){
+        length = length;
+    }
+};

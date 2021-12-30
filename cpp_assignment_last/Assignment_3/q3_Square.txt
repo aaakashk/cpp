@@ -1,0 +1,13 @@
+declaration of class Square:
+
+class Shape{
+    //code here
+};
+
+class Rectangle: public Shape{
+    //code here
+};
+
+class Square: public Shape{
+    //code here
+};
