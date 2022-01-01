@@ -31,9 +31,10 @@ class BankAccount {
         int withdrawAmount;
         cout << "Enter the amount to withdraw: ";
         cin >> withdrawAmount;
-        if (withdrawAmount < balance) {
+        if (withdrawAmount <= balance)
             balance -= withdrawAmount;
-        }
+        else if (withdrawAmount > balance)
+            cout << "Not enough funds to withdraw.\n";
         cout << "Successfully withdrawn amount: " << withdrawAmount << std::endl;
     }
 
