@@ -20,10 +20,6 @@ class SavingsAccount {
     static void modifyInterestRate() {
         annualInterestRate = 5;
     }
-
-    void displayBalance() {
-        cout << "The balance is " << savingsBalance << std::endl;
-    }
 };
 
 int SavingsAccount::annualInterestRate = 4;
