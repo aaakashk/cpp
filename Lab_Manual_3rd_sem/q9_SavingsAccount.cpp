@@ -30,9 +30,11 @@ int SavingsAccount::annualInterestRate = 4;
 
 int main() {
     SavingsAccount saver1(2000), saver2(3000);
-    cout << "The balance with 4 percent interest is " << saver1.calculateMonthlyInterest() << std::endl;
-    cout << "The balance with 4 percent interest is " << saver2.calculateMonthlyInterest() << std::endl;
+    cout << "FOR 4 % INTEREST: " << std::endl;
+    cout << "Balance for saver1 : " << saver1.calculateMonthlyInterest() << std::endl;
+    cout << "Balance for saver2 : " << saver2.calculateMonthlyInterest() << std::endl;
     SavingsAccount::modifyInterestRate();
-    cout << "The balance with 4 percent interest is " << saver1.calculateMonthlyInterest() << std::endl;
-    cout << "The balance with 4 percent interest is " << saver2.calculateMonthlyInterest() << std::endl;
+    cout << "FOR 5 % INTEREST: " << std::endl;
+    cout << "Balance for saver1 : " << saver1.calculateMonthlyInterest() << std::endl;
+    cout << "Balance for saver2 : " << saver2.calculateMonthlyInterest() << std::endl;
 }
