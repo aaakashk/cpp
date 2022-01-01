@@ -5,15 +5,15 @@ using std::cout;
 class SavingsAccount {
    private:
     static int annualInterestRate;
-    int savingsBalance;
+    float savingsBalance;
 
    public:
-    SavingsAccount(int bal) {
+    SavingsAccount(float bal) {
         savingsBalance = bal;
     }
 
     float calculateMonthlyInterest() {
-        savingsBalance += (savingsBalance * annualInterestRate) / 12;
+        savingsBalance += (savingsBalance * annualInterestRate / 100.0) / 12;
         return savingsBalance;
     }
 
