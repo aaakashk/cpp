@@ -1,6 +1,4 @@
 #include <iostream>
-using std::cin;
-using std::cout;
 
 class TollBooth {
     unsigned int numberCars;
@@ -22,17 +20,32 @@ class TollBooth {
     }
 
     void displaytotals() {
-        cout << "The number of cars : " << numberCars << std::endl;
-        cout << "The total amount of cash is : " << totalAmount << std::endl;
+        std::cout << "The number of cars : " << numberCars << std::endl;
+        std::cout << "The total amount of cash is : " << totalAmount << std::endl;
     }
 };
 
 int main() {
     TollBooth test;
-    test.payingCar();
-    test.displaytotals();
-    test.payingCar();
-    test.displaytotals();
-    test.nonPayingCar();
-    test.displaytotals();
+    char choice;
+    do {
+        std::cout << "Enter 1 for paying Car method.\n"
+                     "Enter 2 for non paying Car.\n"
+                     "Enter e to exit the program.\n";
+        std::cin >> choice;
+        switch (choice) {
+            case '1':
+                test.payingCar();
+                test.displaytotals();
+                break;
+            case '2':
+                test.nonPayingCar();
+                test.displaytotals();
+                break;
+            case 'e':
+                exit(1);
+            default:
+                std::cout << "Wrong choice. Enter again\n";
+        }
+    } while (1);
 }
