@@ -14,13 +14,14 @@ class Quadratic {
     }
     void discriminant() {
         D = b * b - 4 * a * c;
-        if (D >= 0) {
+
+        if (D < 0)
+            cout << "No real roots.\n";
+        else {
             float root_1 = (-b + sqrt(D)) / 2;
             float root_2 = (-b - sqrt(D)) / 2;
             cout << "The roots are " << root_1 << " and " << root_2 << std::endl;
-
-        } else
-            cout << "No real roots.\n";
+        }
     }
 };
 
