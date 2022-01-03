@@ -25,7 +25,7 @@ class Area {
 int main() {
     int side, length, breadth;
     float base, height;
-    cout << "Enter the side of the sqaure: ";
+    cout << "Enter the side of the square: ";
     cin >> side;
     cout << "Enter the length and breadth of the rectangle: ";
     cin >> length >> breadth;
