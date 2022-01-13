@@ -1,11 +1,16 @@
 #include <iostream>
 using std::cout;
 
-class Apples;
-class Mangoes;
+//class Apples;
+//class Mangoes;
 class Fruit {
    protected:
     int numberOfFruits;
+
+   public:
+    void print_total(Apples a, Mangoes m) {
+        cout << "Total Fruits = " << a.numberOfApples + m.numberofMangoes;
+    }
 };
 
 class Apples : public Fruit {
@@ -32,4 +37,5 @@ int main() {
     Mangoes mango;
     mango.setMangoes(5);
     mango.print(apple);
+    apple.print_total(apple, mango);
 }
