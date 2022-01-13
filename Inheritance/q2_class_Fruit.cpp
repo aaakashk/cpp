@@ -1,41 +1,35 @@
 #include <iostream>
 using std::cout;
 
+class Apples;
+class Mangoes;
 class Fruit {
    protected:
     int numberOfFruits;
-
-   public:
-    Fruit() {
-    }
-    Fruit(int fruits) {
-        numberOfFruits = fruits;
-    }
-    void print() { cout << "Fruits = " << numberOfFruits << "\n"; }
 };
 
-class Apples : protected Fruit {
+class Apples : public Fruit {
    public:
-    void setApples(int numApple) { numberOfFruits = numApple; }
-    void print() { cout << "Apples = " << numberOfFruits << "\n"; }
+    int numberOfApples;
+    void setApples(int numApple) { numberOfApples = numApple; }
+    void print() { cout << "Apples = " << numberOfApples << "\n"; }
 };
 
 class Mangoes : protected Fruit {
    public:
-    void setMangoes(int numMangoes) { numberOfFruits = numMangoes; }
-    void print() { cout << "Mangoes = " << numberOfFruits << "\n"; }
+    int numberOfMangoes;
+    void setMangoes(int numMangoes) { numberOfMangoes = numMangoes; }
+    void print(Apples a) {
+        cout << "Mangoes = " << numberOfMangoes << "\n";
+        cout << "Fruits = " << a.numberOfApples + numberOfMangoes << "\n";
+    }
 };
 
 int main() {
-    int total_fruits;
-    cout << "Enter the total number of fruits: ";
-    std::cin >> total_fruits;
-    Fruit fruit(total_fruits);
-    fruit.print();
     Apples apple;
     apple.setApples(10);
     apple.print();
     Mangoes mango;
     mango.setMangoes(5);
-    mango.print();
+    mango.print(apple);
 }
