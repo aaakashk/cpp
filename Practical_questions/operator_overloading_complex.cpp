@@ -50,6 +50,11 @@ class Complex {
     void display() {
         cout << real << " + i(" << imag << ")" << endl;
     }
+
+    void set_objectA() {
+        real = 1;
+        imag = 1;
+    }
 };
 
 Complex operator*(int z, Complex B) {
@@ -60,8 +65,7 @@ Complex operator*(int z, Complex B) {
 }
 
 int main() {
-    Complex A(1, 1), B(4, -2), C(5, 3), D(7, 2), E(6, 8), F(7, 2);
-    A.display();
+    Complex A, B(4, -2), C(5, 3), D(7, 2), E(6, 8);
     cout << "B = ";
     B.display();
     cout << "C = ";
@@ -72,12 +76,12 @@ int main() {
     E.display();
     A = B * C;
     A.display();
+    A.set_objectA();
     A = A * 8;
     A.display();
+    A.set_objectA();
     A = 8 * A;
     A.display();
     A = B + C + D - 5 * E + 8;
     A.display();
-    F = F * 8;
-    F.display();
 }
